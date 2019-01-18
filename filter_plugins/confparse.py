@@ -13,7 +13,7 @@ def confparse_parent(config, parent, child):
 
     if match is false, then parent_line will be set, but not child_line.
     """
-    results = []
+    results = {}
     try:
         # ConfParse requires a list, not a string
         config = config.splitlines()
@@ -33,7 +33,8 @@ def confparse_parent(config, parent, child):
         if child_results:
             if len(child_results) > 1:
                 raise ValueError("Currently only a single child match is supported")
-            results.append((True, parent_line.text, child_results[0].text))
+            # results.append((True, parent_line.text, child_results[0].text))
+            results.update ([('match' = True), ('parents' = parent_line.text), ('child' = child_results[0].text)])
         else:
             results.append((False, parent_line.text, None))
 
