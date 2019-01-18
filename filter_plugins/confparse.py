@@ -34,7 +34,7 @@ def confparse_parent(config, parent, child):
             if len(child_results) > 1:
                 raise ValueError("Currently only a single child match is supported")
             # results.append((True, parent_line.text, child_results[0].text))
-            results.update ([('match' = True), ('parents' = parent_line.text), ('child' = child_results[0].text)])
+            results.update ([('match' = True), ('parents' = parent_line.text), ('child' = child_results[0].text.strip())])
         else:
             results.append((False, parent_line.text, None))
 
