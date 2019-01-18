@@ -5,7 +5,7 @@ from ciscoconfparse import CiscoConfParse
 
 
 def confparse_parent(config, parent, child):
-    """Returns [match, parent_line, child_line]
+    """Returns {match, parent: parent, child: child}
 
     Where match is boolean indicating whether a match happened.
     parent_line is the parent line that was matched
